@@ -44,7 +44,7 @@ export default defineType({
     },
     prepare({ title }) {
       return {
-        title: "Hero 1",
+        title: "Hero with Image",
         subtitle: title,
       };
     },

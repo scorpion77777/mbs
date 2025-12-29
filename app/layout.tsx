@@ -5,6 +5,13 @@ import { cn } from "@/lib/utils";
 import { ThemeProvider } from "@/components/theme-provider";
 import { Toaster } from "@/components/ui/sonner";
 
+import { Analytics } from '@vercel/analytics/next';
+
+
+
+
+
+
 const isProduction = process.env.NEXT_PUBLIC_SITE_ENV === "production";
 
 export const metadata: Metadata = {
@@ -42,9 +49,11 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <link rel="icon" href="/favicon.ico" />
       <body
+      
         className={cn(
           "min-h-screen bg-background font-sans antialiased overscroll-none",
           fontSans.variable
+         
         )}
       >
         <ThemeProvider
@@ -59,4 +68,5 @@ export default function RootLayout({
       </body>
     </html>
   );
+   <Analytics />
 }
