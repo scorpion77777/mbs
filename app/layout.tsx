@@ -64,9 +64,10 @@ export default function RootLayout({
         >
           {children}
         </ThemeProvider>
+         <Analytics />
         <Toaster position="top-center" richColors />
       </body>
     </html>
   );
-   <Analytics />
+  
 }
