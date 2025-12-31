@@ -4,11 +4,7 @@ import "./globals.css";
 import { cn } from "@/lib/utils";
 import { ThemeProvider } from "@/components/theme-provider";
 import { Toaster } from "@/components/ui/sonner";
-
-import { Analytics } from '@vercel/analytics/next';
-
-
-
+import { Analytics } from "@vercel/analytics/next";
 
 
 
@@ -49,11 +45,9 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <link rel="icon" href="/favicon.ico" />
       <body
-      
         className={cn(
           "min-h-screen bg-background font-sans antialiased overscroll-none",
           fontSans.variable
-         
         )}
       >
         <ThemeProvider
@@ -64,10 +58,9 @@ export default function RootLayout({
         >
           {children}
         </ThemeProvider>
-         <Analytics />
+        <Analytics />
         <Toaster position="top-center" richColors />
       </body>
     </html>
   );
-  
 }
