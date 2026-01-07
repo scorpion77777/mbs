@@ -18,7 +18,7 @@ export const metadata: Metadata = {
   metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL!),
   title: {
     template: "%s | Schema UI Starter",
-    default: "Sanity Next.js Website | Schema UI Starter",
+    default: "MBS Mobil Mechanic | Premium Auto Care",
   },
   openGraph: {
     images: [
