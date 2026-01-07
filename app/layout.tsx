@@ -48,7 +48,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <link rel="icon" href="/favicon.ico" />
-      <ChatbaseHomeOnly />
+      
       <body
       
         className={cn(
@@ -65,6 +65,8 @@ export default function RootLayout({
         >
           {children}
         </ThemeProvider>
+        {/* Chatbase – homepage only */}
+        <ChatbaseHomeOnly />
          <Analytics />
         <Toaster position="top-center" richColors />
       </body>
