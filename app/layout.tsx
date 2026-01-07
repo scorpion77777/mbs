@@ -4,7 +4,7 @@ import "./globals.css";
 import { cn } from "@/lib/utils";
 import { ThemeProvider } from "@/components/theme-provider";
 import { Toaster } from "@/components/ui/sonner";
-
+import ChatbaseHomeOnly from "@/components/ChatbaseHomeOnly";
 import { Analytics } from '@vercel/analytics/next';
 
 
@@ -48,6 +48,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <link rel="icon" href="/favicon.ico" />
+      <ChatbaseHomeOnly />
       <body
       
         className={cn(
