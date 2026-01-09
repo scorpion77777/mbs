@@ -4,13 +4,8 @@ import "./globals.css";
 import { cn } from "@/lib/utils";
 import { ThemeProvider } from "@/components/theme-provider";
 import { Toaster } from "@/components/ui/sonner";
-import ChatbaseHomeOnly from "@/components/ChatbaseHomeOnly";
-import { Analytics } from '@vercel/analytics/next';
 
-
-
-
-
+import { Analytics } from "@vercel/analytics/next";
 
 const isProduction = process.env.NEXT_PUBLIC_SITE_ENV === "production";
 
@@ -48,13 +43,11 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <link rel="icon" href="/favicon.ico" />
-      
+
       <body
-      
         className={cn(
           "min-h-screen bg-background font-sans antialiased overscroll-none",
           fontSans.variable
-         
         )}
       >
         <ThemeProvider
@@ -65,12 +58,10 @@ export default function RootLayout({
         >
           {children}
         </ThemeProvider>
-        {/* Chatbase – homepage only */}
-        <ChatbaseHomeOnly />
-         <Analytics />
+
+        <Analytics />
         <Toaster position="top-center" richColors />
       </body>
     </html>
   );
-  
 }
