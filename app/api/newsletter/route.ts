@@ -2,6 +2,9 @@ import { NextResponse } from "next/server";
 import { Resend } from "resend";
 import { sanityWriteClient } from "@/lib/sanityWriteClient";
 
+
+
+
 const resend = new Resend(process.env.RESEND_API_KEY);
 
 function isValidEmail(email: string) {
