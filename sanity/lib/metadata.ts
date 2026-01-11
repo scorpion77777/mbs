@@ -25,11 +25,7 @@ export function generatePageMetadata({
       locale: "en_US",
       type: "website",
     },
-    robots: !isProduction
-      ? "noindex, nofollow"
-      : page?.noindex
-        ? "noindex"
-        : "index, follow",
+    robots:"index, follow",
     alternates: {
       canonical:
         process.env.NEXT_PUBLIC_SITE_URL + `/${slug === "index" ? "" : slug}`,
