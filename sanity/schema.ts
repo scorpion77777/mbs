@@ -43,6 +43,7 @@ import allPosts from "./schemas/blocks/all-posts";
 export const schema: { types: SchemaTypeDefinition[] } = {
   types: [
     // documents
+
     page,
     post,
     author,
@@ -51,6 +52,7 @@ export const schema: { types: SchemaTypeDefinition[] } = {
     testimonial,
     navigation,
     settings,
+    newsletter,
     // shared objects
     blockContent,
     link,

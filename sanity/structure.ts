@@ -75,4 +75,14 @@ export const structure = (S: any, context: any) =>
             .schemaType("settings")
             .documentId("settings")
         ),
+        S.listItem()
+        .title("Newsletter")
+        .title("Newsletter")
+        .icon(Settings)
+        .child(
+          S.editor()
+            .id("form-newsletter")
+            .schemaType("form-newsletter")
+            .documentId("form-newsletter")),
+        
     ]);

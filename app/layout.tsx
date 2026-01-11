@@ -12,7 +12,7 @@ const isProduction = process.env.NEXT_PUBLIC_SITE_ENV === "production";
 export const metadata: Metadata = {
   metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL!),
   title: {
-    template: "%s | Schema UI Starter",
+    template: "%s | MBS Performance Auto Care",
     default: "MBS Mobil Mechanic | Premium Auto Care",
   },
   openGraph: {
@@ -26,7 +26,7 @@ export const metadata: Metadata = {
     locale: "en_US",
     type: "website",
   },
-  robots: !isProduction ? "noindex, nofollow" : "index, follow",
+  robots: "index, follow",
 };
 
 const fontSans = FontSans({
