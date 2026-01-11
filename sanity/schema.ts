@@ -52,7 +52,7 @@ export const schema: { types: SchemaTypeDefinition[] } = {
     testimonial,
     navigation,
     settings,
-    newsletter,
+    
     // shared objects
     blockContent,
     link,
