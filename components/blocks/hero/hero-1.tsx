@@ -19,7 +19,7 @@ export default function Hero1({
   links,
 }: Hero1Props) {
   return (
-    <div className="container dark:bg-background py-20 lg:pt-40">
+    <div className="container dark:bg-background py-10 lg:pt-10">
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
         <div className="flex flex-col justify-center">
           {tagLine && (
