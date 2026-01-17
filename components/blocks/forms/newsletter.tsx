@@ -30,6 +30,7 @@ export default function FormNewsletter({
   buttonText,
   successMessage,
 }: FormNewsletterProps) {
+  
   // form validation schema
   const formSchema = z.object({
     email: z
