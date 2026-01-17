@@ -1,15 +1,10 @@
-import { NextResponse } from "next/server";
-import { Resend } from "resend";
-import { neon } from "@neondatabase/serverless";
 
-<<<<<<< HEAD
+
 
 import { NextResponse } from "next/server";
 import { Resend } from "resend";
 import { neon } from "@neondatabase/serverless";
 
-=======
->>>>>>> b9214749bd94cd72a03250d83bfd0cf934d33334
 const sql = neon(process.env.DATABASE_URL!);
 const resend = new Resend(process.env.RESEND_API_KEY);
 
