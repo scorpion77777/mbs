@@ -1,6 +1,4 @@
 
-
-
 import { NextResponse } from "next/server";
 import { Resend } from "resend";
 import { neon } from "@neondatabase/serverless";
