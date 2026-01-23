@@ -5,7 +5,8 @@ import { cn } from "@/lib/utils";
 import { ThemeProvider } from "@/components/theme-provider";
 import { Toaster } from "@/components/ui/sonner";
 import { Analytics } from "@vercel/analytics/next";
-import Script from "next/script";
+
+import ChatbaseClient from "@/components/ChatbaseClient";
 
 const isProduction = process.env.NEXT_PUBLIC_SITE_ENV === "production";
 
@@ -35,11 +36,7 @@ const fontSans = FontSans({
   variable: "--font-sans",
 });
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" suppressHydrationWarning>
       <link rel="icon" href="/favicon.ico" />
@@ -63,24 +60,7 @@ export default function RootLayout({
         <Toaster position="top-center" richColors />
 
         {/* Chatbase AI Chatbot */}
-        <Script
-  src="https://www.chatbase.co/embed.min.js"
-  strategy="afterInteractive"
-  id="chatbase-script"
-/>
-<Script
-  id="chatbase-init"
-  strategy="afterInteractive"
-  dangerouslySetInnerHTML={{
-    __html: `
-      window.chatbase = window.chatbase || function(){(window.chatbase.q = window.chatbase.q || []).push(arguments)};
-      window.chatbase("init", {
-        chatbotId: "EHdHN1otJBP2Cys6XWLQ2",
-        domain: "www.chatbase.co"
-      });
-    `,
-  }}
-/>
+        <ChatbaseClient />
       </body>
     </html>
   );
