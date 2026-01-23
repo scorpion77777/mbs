@@ -6,7 +6,7 @@ import { ThemeProvider } from "@/components/theme-provider";
 import { Toaster } from "@/components/ui/sonner";
 import { Analytics } from "@vercel/analytics/next";
 
-import ChatbaseClient from "@/components/ChatbaseClient";
+
 
 const isProduction = process.env.NEXT_PUBLIC_SITE_ENV === "production";
 
@@ -60,7 +60,13 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <Toaster position="top-center" richColors />
 
         {/* Chatbase AI Chatbot */}
-        <ChatbaseClient />
+        Script>
+{
+`(function(){if(!window.chatbase||window.chatbase("getState")!=="initialized"){window.chatbase=(...arguments)=>{if(!window.chatbase.q){window.chatbase.q=[]}window.chatbase.q.push(arguments)};window.chatbase=new Proxy(window.chatbase,{get(target,prop){if(prop==="q"){return target.q}return(...args)=>target(prop,...args)}})}const onLoad=function(){const script=document.createElement("script");script.src="www.chatbase.co/embed.min.js";script.id="${
+process.env.CHATBASE_BOT_ID
+}";script.domain="www.chatbase.co";document.body.appendChild(script)};if(document.readyState==="complete"){onLoad()}else{window.addEventListener("load",onLoad)}})();`
+}
+</Script>
       </body>
     </html>
   );
