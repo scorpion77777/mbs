@@ -64,20 +64,23 @@ export default function RootLayout({
 
         {/* Chatbase AI Chatbot */}
         <Script
-          id="chatbase"
-          strategy="afterInteractive"
-          dangerouslySetInnerHTML={{
-            __html: `
-              (function(){
-                var s=document.createElement("script");
-                s.src="https://www.chatbase.co/embed.min.js";
-                s.id="CHATBASE_BOT_ID";
-                s.domain="www.chatbase.co";
-                document.body.appendChild(s);
-              })();
-            `,
-          }}
-        />
+  src="https://www.chatbase.co/embed.min.js"
+  strategy="afterInteractive"
+  id="chatbase-script"
+/>
+<Script
+  id="chatbase-init"
+  strategy="afterInteractive"
+  dangerouslySetInnerHTML={{
+    __html: `
+      window.chatbase = window.chatbase || function(){(window.chatbase.q = window.chatbase.q || []).push(arguments)};
+      window.chatbase("init", {
+        chatbotId: "EHdHN1otJBP2Cys6XWLQ2",
+        domain: "www.chatbase.co"
+      });
+    `,
+  }}
+/>
       </body>
     </html>
   );
