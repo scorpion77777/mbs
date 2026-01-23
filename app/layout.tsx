@@ -4,8 +4,8 @@ import "./globals.css";
 import { cn } from "@/lib/utils";
 import { ThemeProvider } from "@/components/theme-provider";
 import { Toaster } from "@/components/ui/sonner";
-
 import { Analytics } from "@vercel/analytics/next";
+import Script from "next/script";
 
 const isProduction = process.env.NEXT_PUBLIC_SITE_ENV === "production";
 
@@ -61,6 +61,23 @@ export default function RootLayout({
 
         <Analytics />
         <Toaster position="top-center" richColors />
+
+        {/* Chatbase AI Chatbot */}
+        <Script
+          id="chatbase"
+          strategy="afterInteractive"
+          dangerouslySetInnerHTML={{
+            __html: `
+              (function(){
+                var s=document.createElement("script");
+                s.src="https://www.chatbase.co/embed.min.js";
+                s.id="CHATBASE_BOT_ID";
+                s.domain="www.chatbase.co";
+                document.body.appendChild(s);
+              })();
+            `,
+          }}
+        />
       </body>
     </html>
   );
